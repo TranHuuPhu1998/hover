@@ -1,18 +1,20 @@
 
 $(window).on('load',function(){
 
-	// $(".mainSlide").slick({
-	// 	lazyLoad: 'ondemand',
-	// 	infinite: true,
-	// 	autoplay: true,
-	// 	autoplaySpeed: 4000,
-	// 	fade: true,
-	// 	cssEase: 'ease-in-out',
-	// 	speed: 1000,
-	// 	arrows: false,
-	// 	dots: false,
-	// 	adaptiveHeight: false
-	// });
+	// var header = document.getElementById("header");
+	var header = document.getElementById("header");
+	var sticky = header.offsetTop;
+	console.log(sticky);
+	
+    window.addEventListener("scroll", function() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+	})
+	
+
 	$('.slideText .top').delay(1000).animate({
 		"top": 0,
 		"opacity": "1"
